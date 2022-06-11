@@ -1,0 +1,17 @@
+<h1> Hello World! </h1>
+<img src= https://c.tenor.com/wuyEcsxrvQwAAAAM/club-penguin-ghosthy.gif>
+<h1>Articles</h1>
+
+<p>Nosso blog tem <%= Article.public_count %> artigos e mais por vir!</p>
+
+<ul>
+  <% @articles.each do |article| %>
+    <% unless article.archived? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= link_to "New Article", new_article_path %>
